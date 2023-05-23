@@ -46,14 +46,14 @@ public class Familia {
         } else if (rendaTotal <= 1500) {
             pontos += 3;
         }
-
+        int pontosDependentes = 0;
         if (quantidadeDeDependentes >= 3) {
-            pontos += 3;
+            pontosDependentes += 3;
         } else if (quantidadeDeDependentes >= 1) {
-            pontos += 2;
+            pontosDependentes += 2;
         }
-        return pontos;
+        int pontuacaoFinal = pontos + pontosDependentes;
+        return pontuacaoFinal;
     }
 
-    
 }
