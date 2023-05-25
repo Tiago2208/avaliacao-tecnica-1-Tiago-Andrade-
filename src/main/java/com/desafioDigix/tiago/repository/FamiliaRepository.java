@@ -8,4 +8,5 @@ import com.desafioDigix.tiago.models.Familia;
 
 public interface FamiliaRepository extends CrudRepository<Familia, Long> {
     List<Familia> findAll();
+    List<Familia> findByNomeDoResponsavel(String nomeDoResponsavel);
 }

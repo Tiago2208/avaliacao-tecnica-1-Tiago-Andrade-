@@ -27,12 +27,12 @@ public class FamiliaController {
     private FamiliaRepository familiaRepository;
     
 
-    @PostMapping
+    @PostMapping("/cadastrarFamilia")
     public void cadastrarFamilia(@RequestBody @Valid ListagemFamiliasDTO dados ) {
         familiaRepository.save(new Familia(dados));
     }
 
-    @GetMapping
+    @GetMapping("/buscarTodasAsFamilias")
     public ResponseEntity<List<Familia>> buscarTodos() {
         Iterable<Familia> iterable = familiaRepository.findAll();
         List<Familia> familias = new ArrayList<>();
@@ -43,8 +43,8 @@ public class FamiliaController {
     public ResponseEntity<List<Familia>> buscarTodosOrdenadosPelaPontuacao() {
         Iterable<Familia> iterable = familiaRepository.findAll();
         List<Familia> familias = new ArrayList<>();
-        familias = familiaService.ordenarFamiliasPorPontuacao(familias);
         iterable.forEach(familias::add);
+        familias = familiaService.ordenarFamiliasPorPontuacao(familias);
         return ResponseEntity.ok().body(familias);
     }
     

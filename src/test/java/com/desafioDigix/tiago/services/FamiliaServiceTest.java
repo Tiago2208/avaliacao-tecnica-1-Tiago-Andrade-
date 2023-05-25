@@ -30,8 +30,8 @@ public class FamiliaServiceTest {
     void deve_retornar_as_familias_ordenadas_por_pontuacao() {
         // Arrange
         Familia familia1 = Familia.builder().nomeDoResponsavel("Tiago").rendaTotal(900).quantidadeDeDependentes(3).build();
-        Familia familia2 = Familia.builder().nomeDoResponsavel("Junior").rendaTotal(1200).quantidadeDeDependentes(2).build();
-        Familia familia3 = Familia.builder().nomeDoResponsavel("Ana").rendaTotal(950).quantidadeDeDependentes(1).build();
+        Familia familia2 = Familia.builder().nomeDoResponsavel("Junior").rendaTotal(950).quantidadeDeDependentes(2).build();
+        Familia familia3 = Familia.builder().nomeDoResponsavel("Ana").rendaTotal(1200).quantidadeDeDependentes(1).build();
         familiaRepository.saveAll(Arrays.asList(familia1, familia2, familia3));
         List<Familia> familiasEsperadas = Arrays.asList(familia1, familia2, familia3);
 
